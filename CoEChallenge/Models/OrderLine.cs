@@ -11,5 +11,7 @@ namespace CoEChallenge.Models
         public Item Item { get; set; }
         public int Quantity { get; set; }
         public bool Promotion { get; set; }
+
+        public decimal Total => Quantity * (Item?.Price ?? 0);
     }
 }

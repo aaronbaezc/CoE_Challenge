@@ -49,10 +49,9 @@ namespace CoEChallenge
             decimal total = 0;
             foreach (var line in order.Lines)
             {
-                var subTotal = line.Quantity * line.Item.Price;
                 var promoTag = line.Promotion ? "(PROMO) " : "";
-                Console.WriteLine($"{subTotal.ToString("C").PadLeft(8)} - {line.Quantity.ToString().PadLeft(5)} - {promoTag}{line.Item.Name}");
-                total += line.Quantity * line.Item.Price;
+                Console.WriteLine($"{line.Total.ToString("C").PadLeft(8)} - {line.Quantity.ToString().PadLeft(5)} - {promoTag}{line.Item.Name}");
+                total += line.Total;
             }
 
 
